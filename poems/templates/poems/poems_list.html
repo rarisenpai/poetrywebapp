@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{%block content%}
+  <h1 class="my-5">These are the poems</h1>
+
+  <div class="row row-cols3 g-2">
+    {%for poem in poems%}
+    <div class="col">
+      <div class="p-3 border">
+          <a href="{%url 'poems.detail' pk=poem.id%}" class="text-dark text-decoration-non"><h3>{{poem.title}}</h3></a>
+          {{poem.text|truncatechars:10}}
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+{%endblock%}

@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="border round">
+  <h1 class="my-5">{{poem.title}}</h1>
+  <p>{{poem.text}}</p>
+</div>
+<a href="{%url 'poems.list'%}" class="btn btn-secondary my-5">Back</a>
+<a href="{%url 'poems.update' pk=poem.id%}" class="btn btn-secondary">Edit</a>
+<a href="{%url 'poems.delete' pk=poem.id%}" class="btn btn-danger">Delete</a>
+{%endblock%}
